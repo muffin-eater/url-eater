@@ -1,0 +1,15 @@
+h1 {
+  color: blue;
+  font: 100% Helvetica, sans-serif; }
+
+h2 {
+  color: black;
+  font: 100% Helvetica, sans-serif; }
+
+body {
+  color: green;
+  font: 100% Arial, sans-serif; }
+  body li {
+    padding-left: 8px; }
+
+/*# sourceMappingURL=style.css.map */

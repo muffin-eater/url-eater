@@ -1,0 +1,24 @@
+// url-eater style.scss
+
+// variables
+$font-title: Helvetica, sans-serif;
+$font-main: Arial, sans-serif;
+
+h1 {
+	color: blue;
+	font: 100% $font-title;
+}
+
+h2 {
+	color: black;
+	font: 100% $font-title;
+}
+
+body {
+	color: green;
+	font: 100% $font-main;
+
+	li {
+		padding-left: 8px;
+	}
+}
