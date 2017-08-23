@@ -40,6 +40,7 @@ function clearText() {
 	modifierText.value = "";
 	outputText.value = "";
 	inputText.focus();
+	outputText.disabled = true;
 	return;
 }
 
