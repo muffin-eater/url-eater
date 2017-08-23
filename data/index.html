@@ -1,5 +1,5 @@
 <!-- url-eater index.html -->
-<h1>Initial index.html commit.</h1>
+<h1>URL Eater</h1>
 
 <body>
 	<h2>Goals:</h2>
@@ -9,16 +9,20 @@
 		<li>Add modifier text input</li>
 		<li>Add confirm button</li>
 		<li>Add output panel</li>
+		<li>Add copy-to-clipboard button</li>
+		<li>Add clear-all-text button</li>
 		<li>Stylise all components</li>
 	</ul>
 
 	<form>
 		URL: <input id="inputText" type="text" name="url-input" autofocus><br>
 		Modifier: <input id="modifierText" type="text" name="url-modifier"><br>
-		Output: <input id="outputText" type="text" value=""><br>
-		<input id="submitBtn" type="button" value="Modify URL!">
+		Output: <input id="outputText" type="text" value="" disabled><br>
+		<input id="submitButton" type="button" value="Modify URL!">
+		<input id="copyTextButton" type="button" value="Copy to Clipboard!">
+		<input id="clearTextButton" type="button" value="Clear all Text!">
 	</form>
 </body>
 
 <script type="text/javascript" src="js/script.js"></script>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
