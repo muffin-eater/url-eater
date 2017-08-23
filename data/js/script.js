@@ -5,8 +5,8 @@ var modifierText = document.getElementById("modifierText");
 var outputText = document.getElementById("outputText");
 
 var submitButton = document.getElementById("submitButton");
-var copyTextButton = document.getElementById("copyTextButton");
-var clearTextButton = document.getElementById("clearTextButton");
+var copyButton = document.getElementById("copyButton");
+var clearButton = document.getElementById("clearButton");
 
 function addClickEvent(element, handler) {
 	if (element.addEventListener) {
@@ -45,5 +45,5 @@ function clearText() {
 }
 
 addClickEvent(submitButton, modifyUrl);
-addClickEvent(copyTextButton, copyText);
-addClickEvent(clearTextButton, clearText);
+addClickEvent(copyButton, copyText);
+addClickEvent(clearButton, clearText);
