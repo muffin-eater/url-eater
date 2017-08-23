@@ -1,0 +1,3 @@
+# url-eater .gitignore
+
+data/.sass-cache/**
