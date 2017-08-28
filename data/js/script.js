@@ -14,17 +14,27 @@ function addClickEvent(element, handler) {
 	} else if (element.attachEvent) {
 		element.attachEvent('onclick', handler);
 	}
+
 	return;
 }
 
 function modifyUrl() {
-	outputText.value = inputText.value + modifierText.value;
+	var caretPos = detectCaretPosition();
+
+	if (caretPos != -1) {
+		outputText.value = [inputText.value.slice(0, caretPos), modifierText.value, inputText.value.slice(caretPos)].join('');
+	} else {
+		outputText.value = inputText.value + modifierText.value;
+	}
+
 	outputText.disabled = false;
+
 	return;
 }
 
 function copyText() {
 	outputText.select();
+
 	try {
 		var successful = document.execCommand('copy');
 		var msg = successful ? 'successful' : 'unsuccessful';
@@ -32,16 +42,29 @@ function copyText() {
 	} catch (err) {
 		console.log('Oops, unable to copy!');
 	}
+
 	return;
 }
 
 function clearText() {
+
 	inputText.value = "";
 	modifierText.value = "";
 	outputText.value = "";
 	inputText.focus();
 	outputText.disabled = true;
+
 	return;
+}
+
+function detectCaretPosition() {
+	var caretPos = -1;
+
+	if (inputText.selectionStart || inputText.selectionStart == '0') {
+		caretPos = inputText.selectionStart;
+	}
+
+	return caretPos;
 }
 
 addClickEvent(submitButton, modifyUrl);
