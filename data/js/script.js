@@ -7,6 +7,7 @@ var outputText = document.getElementById("outputText");
 var submitButton = document.getElementById("submitButton");
 var copyButton = document.getElementById("copyButton");
 var clearButton = document.getElementById("clearButton");
+var visitUrlButton = document.getElementById("visitUrlButton");
 
 function addClickEvent(element, handler) {
 	if (element.addEventListener) {
@@ -28,6 +29,7 @@ function modifyUrl() {
 	}
 
 	outputText.disabled = false;
+	visitUrlButton.disabled = false;
 
 	return;
 }
@@ -53,8 +55,15 @@ function clearText() {
 	outputText.value = "";
 	inputText.focus();
 	outputText.disabled = true;
+	visitUrlButton.disabled = true;
 
 	return;
+}
+
+function visitUrl() {
+  window.open(outputText.value, '_blank');
+
+  return;
 }
 
 function detectCaretPosition() {
@@ -70,3 +79,4 @@ function detectCaretPosition() {
 addClickEvent(submitButton, modifyUrl);
 addClickEvent(copyButton, copyText);
 addClickEvent(clearButton, clearText);
+addClickEvent(visitUrlButton, visitUrl);
