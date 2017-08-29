@@ -20,15 +20,19 @@ function addClickEvent(element, handler) {
 }
 
 function modifyUrl() {
-	var caretPos = detectCaretPosition();
+	if (inputText.value.length > 0) {
+		var caretPos = detectCaretPosition();
 
-	if (caretPos != -1) {
-		outputText.value = [inputText.value.slice(0, caretPos), modifierText.value, inputText.value.slice(caretPos)].join('');
+		if (caretPos != -1) {
+			outputText.value = [inputText.value.slice(0, caretPos), modifierText.value, inputText.value.slice(caretPos)].join('');
+		} else {
+			outputText.value = inputText.value + modifierText.value;
+		}
+
+		toggleButtons(false);
 	} else {
-		outputText.value = inputText.value + modifierText.value;
+		inputText.focus();
 	}
-
-	toggleButtons(false);
 
 	return;
 }
