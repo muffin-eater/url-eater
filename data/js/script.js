@@ -6,8 +6,8 @@ var outputText = document.getElementById("outputText");
 
 var submitButton = document.getElementById("submitButton");
 var copyButton = document.getElementById("copyButton");
-var clearButton = document.getElementById("clearButton");
 var visitUrlButton = document.getElementById("visitUrlButton");
+var clearButton = document.getElementById("clearButton");
 
 function addClickEvent(element, handler) {
 	if (element.addEventListener) {
@@ -48,6 +48,12 @@ function copyText() {
 	return;
 }
 
+function visitUrl() {
+  window.open(outputText.value, '_blank');
+
+  return;
+}
+
 function clearText() {
 
 	inputText.value = "";
@@ -58,12 +64,6 @@ function clearText() {
 	visitUrlButton.disabled = true;
 
 	return;
-}
-
-function visitUrl() {
-  window.open(outputText.value, '_blank');
-
-  return;
 }
 
 function detectCaretPosition() {
@@ -78,5 +78,5 @@ function detectCaretPosition() {
 
 addClickEvent(submitButton, modifyUrl);
 addClickEvent(copyButton, copyText);
-addClickEvent(clearButton, clearText);
 addClickEvent(visitUrlButton, visitUrl);
+addClickEvent(clearButton, clearText);
