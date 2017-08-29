@@ -28,8 +28,7 @@ function modifyUrl() {
 		outputText.value = inputText.value + modifierText.value;
 	}
 
-	outputText.disabled = false;
-	visitUrlButton.disabled = false;
+	toggleButtons(false);
 
 	return;
 }
@@ -55,13 +54,11 @@ function visitUrl() {
 }
 
 function clearText() {
-
 	inputText.value = "";
 	modifierText.value = "";
 	outputText.value = "";
 	inputText.focus();
-	outputText.disabled = true;
-	visitUrlButton.disabled = true;
+	toggleButtons(true);
 
 	return;
 }
@@ -76,7 +73,17 @@ function detectCaretPosition() {
 	return caretPos;
 }
 
+function toggleButtons(toggle) {
+	outputText.disabled = toggle;
+	copyButton.disabled = toggle;
+	visitUrlButton.disabled = toggle;
+	clearButton.disabled = toggle;
+
+	return;
+}
+
 addClickEvent(submitButton, modifyUrl);
 addClickEvent(copyButton, copyText);
 addClickEvent(visitUrlButton, visitUrl);
 addClickEvent(clearButton, clearText);
+clearText();
